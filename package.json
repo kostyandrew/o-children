@@ -1,0 +1,28 @@
+{
+	"name": "o-children",
+	"version": "10.0.0",
+	"bin": {
+		"o-children": "./src/bin.mjs"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/kostyandrew/o-children.git"
+	},
+	"license": "MIT",
+	"author": "Andrii Kostetskyi <kostyandrew@gmail.com>",
+	"imports": {
+		"#framework/*": "./src/framework/*",
+		"#internal/*": "./src/internal/*"
+	},
+	"exports": {
+		"./*": "./src/framework/*.mjs"
+	},
+	"dependencies": {
+		"express": "^4.18.2",
+		"lodash-es": "^4.17.21",
+		"nodemon": "^3.0.3"
+	},
+	"devDependencies": {
+		"prettier": "^3.2.4"
+	}
+}

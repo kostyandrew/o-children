@@ -1,0 +1,9 @@
+root = true
+
+[*]
+end_of_line = lf
+
+[{*.js,*.mjs,*.json,*.md}]
+indent_style = tab
+indent_size = tab
+tab_width = 2
