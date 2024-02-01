@@ -51,7 +51,7 @@ app/
 
   ```javascript
   // app/products/index.mjs
- 
+
   export function GET() {
   	// Logic to retrieve all products...
   	return [

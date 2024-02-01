@@ -1,0 +1,15 @@
+{
+	"extends": "./tsconfig.json",
+	"compilerOptions": {
+		"module": "commonjs",
+		"target": "es2017",
+		"outDir": "dist/commonjs",
+		"paths": {
+			"#internal/dirname": ["src/dirname.cjs"],
+			"#internal/*": ["src/*"],
+			"#framework/*": ["src/framework/*"]
+		}
+	},
+	"include": ["src/**/*.ts"],
+	"exclude": ["src/**/*.esm.ts"]
+}

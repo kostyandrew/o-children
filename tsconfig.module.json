@@ -1,0 +1,15 @@
+{
+	"extends": "./tsconfig.json",
+	"compilerOptions": {
+		"module": "esnext",
+		"target": "es2017",
+		"outDir": "dist/module",
+		"paths": {
+			"#internal/dirname": ["src/dirname.esm"],
+			"#internal/*": ["src/*"],
+			"#framework/*": ["src/framework/*"]
+		}
+	},
+	"include": ["src/**/*.ts"],
+	"exclude": ["src/**/*.cjs.ts"]
+}

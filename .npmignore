@@ -2,3 +2,6 @@
 .prettierrc
 .editorconfig
 node_modules
+tsconfig.json
+tsconfig.commonjs.json
+tsconfig.module.json

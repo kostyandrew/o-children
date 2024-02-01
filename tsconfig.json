@@ -1,0 +1,27 @@
+{
+	"compilerOptions": {
+		"target": "es2022",
+		"module": "esnext",
+		"strict": true,
+		"esModuleInterop": true,
+		"noImplicitAny": true,
+		"moduleResolution": "node",
+		"sourceMap": false,
+		"outDir": "dist",
+		"baseUrl": ".",
+		"paths": {
+			"#internal/dirname": ["src/dirname.esm"],
+			"#internal/*": ["src/*"],
+			"#framework/*": ["src/framework/*"]
+		},
+		"lib": ["es2015"],
+		"declaration": true
+	},
+	"include": ["src/**/*.ts"],
+	"exclude": ["node_modules"],
+	"tsc-alias": {
+		"fileExtensions": {
+			"inputGlob": "{d.ts}"
+		}
+	}
+}

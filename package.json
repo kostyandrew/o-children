@@ -1,28 +1,58 @@
 {
 	"name": "o-children",
-	"version": "10.0.0",
+	"version": "10.1.0-beta.0",
 	"bin": {
-		"o-children": "./src/bin.mjs"
+		"o-children": "./dist/module/bin.mjs"
 	},
+	"types": "./dist/module",
+	"type": "module",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/kostyandrew/o-children.git"
 	},
+	"files": [
+		"dist",
+		"LICENSE",
+		"README.md"
+	],
 	"license": "MIT",
 	"author": "Andrii Kostetskyi <kostyandrew@gmail.com>",
 	"imports": {
-		"#framework/*": "./src/framework/*",
-		"#internal/*": "./src/internal/*"
+		"#framework/*": {
+			"import": "./dist/module/framework/*.mjs",
+			"require": "./dist/commonjs/framework/*.cjs"
+		},
+		"#internal/*": {
+			"import": "./dist/module/*.mjs",
+			"require": "./dist/commonjs/*.cjs"
+		}
+	},
+	"scripts": {
+		"build:commonjs": "(rimraf dist/commonjs || true) && tsc -p tsconfig.commonjs.json && node renameExtensions.mjs commonjs && tsc-alias -p tsconfig.commonjs.json && chmod +x ./dist/commonjs/bin.cjs",
+		"build:module": "(rimraf dist/module || true) && tsc -p tsconfig.module.json && node renameExtensions.mjs module && tsc-alias -p tsconfig.module.json && chmod +x ./dist/module/bin.mjs",
+		"build": "(rimraf dist || true) && npm run build:commonjs && npm run build:module"
 	},
 	"exports": {
-		"./*": "./src/framework/*.mjs"
+		"./*": {
+			"import": "./dist/module/framework/*.mjs",
+			"require": "./dist/commonjs/framework/*.cjs"
+		}
 	},
 	"dependencies": {
 		"express": "^4.18.2",
-		"lodash-es": "^4.17.21",
+		"lodash": "^4.17.21",
 		"nodemon": "^3.0.3"
 	},
 	"devDependencies": {
-		"prettier": "^3.2.4"
+		"@types/express": "^4.17.21",
+		"@types/lodash-es": "^4.17.12",
+		"@types/node": "^20.11.5",
+		"@types/nodemon": "^1.19.6",
+		"prettier": "^3.2.4",
+		"rimraf": "^5.0.5",
+		"tsc-alias": "^1.8.8"
+	},
+	"peerDependencies": {
+		"typescript": "^5.3.3"
 	}
 }
