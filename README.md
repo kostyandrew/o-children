@@ -167,6 +167,29 @@ Make sure to adjust your configuration according to your application's needs and
 - To start the server, use the command: `o-children start`
 - To watch for file changes and automatically restart the server, use the command: `o-children watch`
 
+## Testing
+
+This project uses [Vitest](https://vitest.dev/) for unit and integration testing.
+The test files are located in the `tests/` directory. Sample handlers used by tests are in `tests/sample_handlers/`.
+
+To run the tests:
+
+```bash
+npm test
+```
+
+To generate a coverage report:
+
+```bash
+npm run coverage
+```
+
+The tests include:
+- Basic unit tests for utility functions (e.g., `defineConfig`).
+- Integration tests for GET and POST requests using `supertest`, targeting sample handlers.
+- Tests for middleware execution (via `_middleware.mjs` files).
+- Tests for error handling within route handlers.
+
 ## License
 
 This project is licensed under the MIT License.
