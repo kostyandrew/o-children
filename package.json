@@ -22,7 +22,11 @@
 		"lodash-es": "^4.17.21",
 		"nodemon": "^3.0.3"
 	},
-	"devDependencies": {
-		"prettier": "^3.2.4"
-	}
+        "devDependencies": {
+                "prettier": "^3.2.4",
+                "vitest": "^1.4.0"
+        },
+        "scripts": {
+                "test": "vitest"
+        }
 }
